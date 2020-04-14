@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/mainCss.ejs') %>
+</head>
+
+<body>
+    <h1> Meteo pour <%= `${meteoCity.city_info.name},  ${meteoCity.city_info.country}` %></h1> 
+        <ul>
+        <% for (let i = 0; i<5; i++) { %>
+            <li><%- include ('../partials/dailyMeteo.ejs',{day: meteoCity[`fcst_day_${i}`]}) %></li>
+       <% } %>
+       </ul>
+</body>
+
+</html>

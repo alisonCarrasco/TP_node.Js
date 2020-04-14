@@ -1,0 +1,6 @@
+<ul>
+    <%= `${day.date} - ${day.day_long} - ${day.condition}` %>
+    <% for (let i = 0; i<24; i++) { %>
+        <li><%- include ('../partials/hourlyMeteo.ejs', { hour: day.hourly_data[`${i}H00`], hourString:`${i}H00` }) %></li>
+    <% } %>
+</ul>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, this is a dynamic web page using the EJS template engine</title>
+    <%- include ('../partials/mainCss.ejs') %>
+</head>
+<body>
+<h1> message list </h1>
+<ul>
+    <% messages.forEach((messages) => { %>
+    <li><%= `${messages.id} - ${messages.id_sender} - ${messages.id_receiver} - ${messages.title} - ${messages.content} ${messages.id_sender == userId ? "Envoyé": "reçu"} `%></li>
+    <% }); %>
+    
+
+</ul>
+</body>
+</html>
